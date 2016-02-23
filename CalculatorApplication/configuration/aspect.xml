@@ -1,0 +1,23 @@
+﻿<aop>
+  <aspect value ="LogAOP">
+    <advice type="before" assembly="AOPAttribute" class="AOPAttribute.LogAdvice">
+      <pointcut>ADD</pointcut>
+      <pointcut>SUBSTRACT</pointcut>
+    </advice>
+    <advice type="after" assembly="AOPAttribute" class="AOPAttribute.LogAdvice">
+      <pointcut>ADD</pointcut>
+      <pointcut>SUBSTRACT</pointcut>
+    </advice>
+  </aspect>
+
+  <aspect value ="MonitorAOP">
+    <advice type="before" assembly="AOPAttribute" class="AOPAttribute.MonitorAdvice">
+      <pointcut>ADD</pointcut>
+      <pointcut>SUBSTRACT</pointcut>
+    </advice>
+    <advice type="after" assembly="AOPAttribute" class="AOPAttribute.MonitorAdvice">
+      <pointcut>ADD</pointcut>
+      <pointcut>SUBSTRACT</pointcut>
+    </advice>
+  </aspect>
+</aop>
