@@ -77,8 +77,8 @@ namespace AOPAttribute
         }
 
 
-        private SortedList m_BeforeAdvices;
-        private SortedList m_AfterAdvices;
+        private SortedList m_BeforeAdvices = new SortedList();
+        private SortedList m_AfterAdvices = new SortedList();
         protected virtual void AddBeforeAdvice(string methodName, IBeforeAdvice before)
         {
             lock (this.m_BeforeAdvices)
@@ -102,14 +102,21 @@ namespace AOPAttribute
 
         public void ReadAspect(string aspectXml,string aspectName)
         {
-            IBeforeAdvice before = (IBeforeAdvice)Configuration.GetAdvice(aspectXml,aspectName,Advice.Before);
-            string[] before_methodNames = Configuration.GetNames(aspectXml,aspectName,Advice.Before);
+            IBeforeAdvice before = (IBeforeAdvice)Configuration.GetAdvice(aspectXml, aspectName, Advice.Before);
+            string[] before_methodNames = Configuration.GetNames(aspectXml, aspectName, Advice.Before);
+            //Type type = Type.GetType("AOPAttribute.LogAdvice");
+            //IBeforeAdvice before = (IBeforeAdvice)type.Assembly.CreateInstance("AOPAttribute.LogAdvice");
+            //string[] before_methodNames = new string[] { "ADD", "SUBSTRACT" };
             foreach (string name in before_methodNames)
             {
                  AddBeforeAdvice(name,before);
             }
-            IAfterAdvice after = (IAfterAdvice)Configuration.GetAdvice(aspectXml,aspectName,Advice.After);
-            string[] after_methodNames = Configuration.GetNames(aspectXml,aspectName,Advice.After);
+            IAfterAdvice after = (IAfterAdvice)Configuration.GetAdvice(aspectXml, aspectName, Advice.After);
+            string[] after_methodNames = Configuration.GetNames(aspectXml, aspectName, Advice.After);
+
+            //Type type2 = Type.GetType("AOPAttribute.LogAdvice");
+            //IAfterAdvice after = (IAfterAdvice)type2.Assembly.CreateInstance("AOPAttribute.LogAdvice");
+            //string[] after_methodNames = new string[] { "ADD", "SUBSTRACT" };
             foreach (string name in after_methodNames)
             {
                  AddAfterAdvice(name,after);

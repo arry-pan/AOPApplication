@@ -49,9 +49,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AOPAttribute\AOP.Advice.csproj">
+    <ProjectReference Include="..\AOPAttribute\AOPAttribute.csproj">
       <Project>{4c13eef8-28ec-4642-9478-d5725690dbcb}</Project>
-      <Name>AOP.Advice</Name>
+      <Name>AOPAttribute</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

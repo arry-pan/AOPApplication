@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Advice.cs" />
     <Compile Include="AOPAttribute.cs" />
     <Compile Include="AOPProperty.cs" />
     <Compile Include="Aspect.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="IAfterAdvice.cs" />
     <Compile Include="IBeforeAdvice.cs" />
     <Compile Include="LogAdvice.cs" />

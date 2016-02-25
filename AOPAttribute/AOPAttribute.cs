@@ -8,7 +8,7 @@ namespace AOPAttribute
     public abstract class AOPAttribute : Attribute, IContextAttribute
     {
         private string m_AspectXml;
-        private const string CONFIGFILE = @"configuration\aspect.xml";
+        private const string CONFIGFILE = @"..\..\configuration\aspect.xml";
         public AOPAttribute()
         {
             m_AspectXml = CONFIGFILE;
